@@ -1,0 +1,90 @@
+{% extends 'layout.html' %}
+{% block content %}
+<style>
+  body {
+    background-color: #121b3a;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .form-card {
+    max-width: 600px;
+    margin: auto;
+    background-color: #1e2a4a;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+
+  label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 500;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 8px;
+    background-color: #293654;
+    color: #ffffff;
+  }
+
+  button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: #3f80ea;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #2a62c9;
+  }
+</style>
+
+<div class="form-card">
+  <h2>Enter Laboratory Details</h2>
+  <form method="POST">
+    <label>Date:</label>
+    <input type="date" name="date" required>
+
+    <label>Sample Code:</label>
+    <input type="text" name="sample_code" required>
+
+    <label>Total Cell Count (TLC):</label>
+    <input type="number" name="tlc" required>
+
+    <label>Lymphocytes (L %):</label>
+    <input type="number" name="l_percent" required>
+
+    <label>Polymorphs (P %):</label>
+    <input type="number" name="p_percent" required>
+
+    <label>Sugar (mg/dL):</label>
+    <input type="number" name="sugar" required>
+
+    <label>Protein (mg/dL):</label>
+    <input type="number" name="protein" required>
+
+  
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="signup-container" style="max-width: 400px; margin: auto; padding: 2rem;">
+  <h2 style="text-align: center;">Sign Up</h2>
+  <form method="POST" style="display: flex; flex-direction: column; gap: 1rem;">
+
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username" placeholder="Enter username" required class="form-control">
+    </div>
+
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" placeholder="Create password" required class="form-control">
+    </div>
+
+    <div>
+      <label for="role">Role:</label>
+      <select name="role" id="role" class="form-control">
+        <option value="Client">Operator</option>
+        <option value="Admin">Admin</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="patient_id">Patient ID (for Clients only):</label>
+      <input type="text" name="patient_id" id="patient_id" placeholder="Optional for Admins" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="width: 100%;">Sign Up</button>
+  </form>
+
+  {% if error %}
+    <p style="color: red; margin-top: 1rem;">{{ error }}</p>
+  {% endif %}
+  {% if success %}
+    <p style="color: green; margin-top: 1rem;">{{ success }}</p>
+  {% endif %}
+
+  <p style="margin-top: 1rem; text-align: center;">
+    Already have an account?
+    <a href="{{ url_for('login') }}">Log in</a>
+  </p>
+</div>
+{% endblock %}
