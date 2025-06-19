@@ -11,16 +11,22 @@
   <div class="card info-card">
     <h2>Patient Dashboard</h2>
     <p><strong>Patient ID:</strong> {{ data[0]['Patient_ID'] }}</p>
-    <p><strong>Last Test Date:</strong> {{ data[0]['Date'] }}</p>
+    <p><strong>Last Test Date:</strong> {{ data[-1]['Date'] }}</p>
   </div>
 
   <!-- Stat Cards -->
   <div class="card-grid">
-    <div class="card stat-card"><h4>TLC</h4><p>{{ data[0]['TLC'] }}</p></div>
-    <div class="card stat-card"><h4>L%</h4><p>{{ data[0]['L%'] }}%</p></div>
-    <div class="card stat-card"><h4>P%</h4><p>{{ data[0]['P%'] }}%</p></div>
-    <div class="card stat-card"><h4>Sugar</h4><p>{{ data[0]['Sugar'] }} mg/dL</p></div>
-    <div class="card stat-card"><h4>Protein</h4><p>{{ data[0]['Protein'] }} mg/dL</p></div>
+    <div class="card stat-card"><h4>TLC</h4><p>{{ data[-1]['TLC'] }}</p></div>
+    <div class="card stat-card"><h4>L%</h4><p>{{ data[-1]['L%'] }}%</p></div>
+    <div class="card stat-card"><h4>P%</h4><p>{{ data[-1]['P%'] }}%</p></div>
+    <div class="card stat-card"><h4>Sugar</h4><p>{{ data[-1]['Sugar'] }} mg/dL</p></div>
+    <div class="card stat-card"><h4>Protein</h4><p>{{ data[-1]['Protein'] }} mg/dL</p></div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card stat-card"><h4>Result</h4><p>{{ diagnosis_label }}</p></div>
+    <div class="card stat-card"><h4>Diagnosed</h4><p>{{ model_output_percentage }}%</p></div>
+    <div class="card stat-card"><h4>Message</h4><p>{{ diagnosis_message }}</p></div>
   </div>
 
   <!-- Charts Section -->

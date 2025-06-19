@@ -23,10 +23,11 @@ new Chart(document.getElementById("trendChart"), {
 });
 
 // Pie chart for CSF cell composition
-const lymph = chartData[0]["L%"];
-const polymorphs = chartData[0]["P%"];
+const latest = chartData[chartData.length - 1];
+const lymph = latest["L%"];
+const polymorphs = latest["P%"];
 
-new Chart(document.getElementById("csfPieChart"), {
+new Chart(document.getElementById("lpPieChart"), {
   type: "pie",
   data: {
     labels: ["Lymphocytes", "Polymorphs"],
